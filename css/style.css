@@ -1,0 +1,129 @@
+body{
+    font-family: 'Poppins', serif;
+    background-image: url('./images/concrete_seamless.png');
+    background-color: #f1f1f1;
+}
+
+header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.nav_links{
+    display: flex;
+    flex-direction: column;
+}
+
+.nav_links a, a:visited{
+    color: blue;
+}
+
+.card > header{
+    background: #288088;
+    border: solid 2px #45ADAD;
+    padding: 20px 0px 20px 0px;
+    border-radius: 50px 50px 0px 0px;
+}
+
+.card{
+    border-radius: 50px 50px 0px 0px;
+    display: flex;
+    flex-direction: column;
+    flex-basis: 450px;
+    
+}
+
+.pricing{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.gallery img{
+    border: solid 10px #50C7C7;
+    margin: 10px;
+    width: 300px;
+}
+
+.gallery{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+@keyframes mymove {
+    from {width: 25px; opacity: 0;}
+    to {width: 475px; opacity: 1;}
+}
+
+#logo{
+    animation-name: mymove;
+    animation-duration: 5s;
+}
+
+
+@media screen and (min-width: 900px){
+    header, .nav_links{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .card{
+        display: flex;
+        flex-basis: 250px;
+    }
+
+    body > header{
+        position: fixed;
+        width: 100%;
+    }
+
+    main{
+        padding-top: 100px;
+    }
+}
+
+@media print{
+    body{
+        background-image: none;
+        background-color: #f1f1f1;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    nav{
+        width: 100%;
+    }
+
+    .nav_links{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+
+    .card{
+        display: flex;
+        border: solid 2px #45ADDD;
+        flex-basis: 325px;
+        align-self: flex-end;
+    }
+
+    #gallery, .gallery{
+        display: none;
+    }
+
+    .card li:nth-of-type(2)::after{
+        content: "\1F44D";
+    }
+}
+
+@media (prefers-reduced-motion) {
+    #logo{
+        animation: none;
+    }
+}
